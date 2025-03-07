@@ -10,7 +10,9 @@ dotenv.config({
 const app = express()
 app.use(cors({
    origin:"https://frontend-taskmanager-wbe3.onrender.com",
-   credentials:true
+   credentials:true,
+   methods: ["GET", "POST", "PATCH", "DELETE"], // Explicitly allow methods
+   allowedHeaders: ["Content-Type", "Authorization"], // Allow headers
 }))
 app.use(express.json())
 app.use(cookieParser())
