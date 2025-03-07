@@ -12,7 +12,8 @@ export const generateToken= async(res,user,message)=>{
    )
    const option = {
     httpOnly:true,
-    secure:true
+    secure:true,
+    sameSite: "none", // Required for cross-origin cookies
    }
    return res
    .status(201)
